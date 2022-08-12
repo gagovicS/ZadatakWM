@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SG_WM_zadatak.Models.Proizvod>
+
+@{
+    ViewBag.Title = "PrikaziJson";
+}
+
+<h2>Prikazi Json</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateJson")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kategorija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proizvodjac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dobavljac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cena)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kategorija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proizvodjac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dobavljac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cena)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditJson", new { id=item.proizvodID }) |
+            @Html.ActionLink("Delete", "DeleteJson", new { id=item.proizvodID })
+        </td>
+    </tr>
+}
+
+</table>
